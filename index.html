@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Quiz - IND EXP (27 Oct 2026)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .question-box {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f4f8;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #2c3e50;
+        }
+        button.submit-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        button.submit-btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+    <script>
+        function checkAnswer(qID, correctAnswer) {
+            const selected = document.querySelector(`input[name="${qID}"]:checked`);
+            const explanationBox = document.getElementById(`exp-${qID}`);
+            
+            if (!selected) {
+                alert("Please select an option first!");
+                return;
+            }
+
+            if (selected.value === correctAnswer) {
+                explanationBox.style.background = "#d4edda";
+                explanationBox.style.color = "#155724";
+                explanationBox.innerHTML = "<strong>Correct!</strong> " + explanationBox.getAttribute("data-text");
+            } else {
+                explanationBox.style.background = "#f8d7da";
+                explanationBox.style.color = "#721c24";
+                explanationBox.innerHTML = "<strong>Incorrect.</strong> " + explanationBox.getAttribute("data-text");
+            }
+            explanationBox.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>CURRENT QUIZ IND EXP</h1>
+    <p style="text-align: center;"><strong>Date:</strong> 27 OCT 2026 | <strong>Topics:</strong> Brazil Elections, El Niño, Snakebite Antivenom, Census Rules & Article 23[cite: 1]</p>
+
+    <!-- SECTION A -->
+    <h2>SECTION A — BRAZIL ELECTIONS</h2>
+
+    <div class="question-box">
+        <p><strong>Q1. Consider the following statements regarding Brazil's presidential election:</strong><br>
+        1. The president is elected through direct voting.<br>
+        2. If no candidate secures the required majority, a runoff is held between the top two candidates.<br>
+        3. The Workers' Party is associated with Lula da Silva.<br>
+        4. A runoff election involves all candidates contesting again in the second round.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q1" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q1" value="C"> C. 2 and 4 only</label>
+            <label><input type="radio" name="q1" value="D"> D. 1, 3 and 4 only</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q1', 'B')">Submit Answer</button>
+        <div id="exp-q1" class="explanation" data-text="Statements 1, 2 and 3 are correct. A runoff is between the top two candidates, not all candidates.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q2. With reference to Brazil's presidential election:</strong><br>
+        1. A candidate must secure more than 50% of valid votes to win outright in the first round.<br>
+        2. A runoff is held if no candidate achieves the required majority.<br>
+        3. The candidate who finishes third necessarily enters the second round.<br>
+        4. Voter mobilisation between rounds can influence the runoff result.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="A"> A. 1 and 3 only</label>
+            <label><input type="radio" name="q2" value="B"> B. 2 and 3 only</label>
+            <label><input type="radio" name="q2" value="C"> C. 1, 2 and 4 only</label>
+            <label><input type="radio" name="q2" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q2', 'C')">Submit Answer</button>
+        <div id="exp-q2" class="explanation" data-text="The runoff involves the top two candidates. The third-placed candidate does not automatically enter it.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q3. Which pair is incorrectly matched?</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="A"> A. Lula da Silva — Workers' Party</label>
+            <label><input type="radio" name="q3" value="B"> B. Fernando de Mello — National Reconstruction Party</label>
+            <label><input type="radio" name="q3" value="C"> C. Lula da Silva — Presidential candidate</label>
+            <label><input type="radio" name="q3" value="D"> D. El Niño — Brazilian electoral system</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q3', 'D')">Submit Answer</button>
+        <div id="exp-q3" class="explanation" data-text="El Niño is a climate phenomenon associated with ENSO, not an electoral system.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q4. Consider the following statements about challenges facing Lula, as recorded in the notes:</strong><br>
+        1. Brazil's public debt was reported as approximately 82%.<br>
+        2. The interest rate was reported as 13.75%.<br>
+        3. Lula faced a highly conservative Congress.<br>
+        4. High public debt automatically guarantees lower inflation.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q4" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q4" value="C"> C. 2 and 4 only</label>
+            <label><input type="radio" name="q4" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q4', 'B')">Submit Answer</button>
+        <div id="exp-q4" class="explanation" data-text="Statements 1–3 reproduce the notes. Public debt alone does not determine the direction of inflation.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q5. Consider the following statements:</strong><br>
+        1. A runoff can occur when no candidate receives the required majority in the first round.<br>
+        2. The top two candidates participate in the runoff.<br>
+        3. A candidate finishing second in the first round can never win the election.<br>
+        4. Voter mobilisation between rounds may affect the final outcome.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q5" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q5" value="B"> B. 1, 2 and 4 only</label>
+            <label><input type="radio" name="q5" value="C"> C. 2 and 3 only</label>
+            <label><input type="radio" name="q5" value="D"> D. 1, 3 and 4 only</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q5', 'B')">Submit Answer</button>
+        <div id="exp-q5" class="explanation" data-text="A candidate who finishes second in the first round can win the runoff.[cite: 1]"></div>
+    </div>
+
+    <!-- SECTION B -->
+    <h2>SECTION B — EL NIÑO AND CLIMATE</h2>
+
+    <div class="question-box">
+        <p><strong>Q6. Consider the following statements regarding El Niño–Southern Oscillation (ENSO):</strong><br>
+        1. ENSO includes El Niño, neutral conditions and La Niña.<br>
+        2. El Niño is associated with anomalous warming in the central and eastern equatorial Pacific.<br>
+        3. La Niña is the warm phase of ENSO.<br>
+        4. ENSO can influence rainfall and temperature patterns beyond the Pacific region.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q6" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q6" value="B"> B. 1, 2 and 4 only</label>
+            <label><input type="radio" name="q6" value="C"> C. 2 and 3 only</label>
+            <label><input type="radio" name="q6" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q6', 'B')">Submit Answer</button>
+        <div id="exp-q6" class="explanation" data-text="La Niña is the cool phase. ENSO can influence climate patterns worldwide, including the Indian monsoon.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q7. With reference to the Niño 3.4 region:</strong><br>
+        1. It is used to monitor sea-surface temperature anomalies in the equatorial Pacific.<br>
+        2. A sustained positive temperature anomaly is an indicator used in identifying El Niño conditions.<br>
+        3. The notes mention a three-month average anomaly of at least 0.5°C above normal.<br>
+        4. One day of unusually high temperature is sufficient to establish an El Niño event.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q7" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q7" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q7" value="C"> C. 2, 3 and 4 only</label>
+            <label><input type="radio" name="q7" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q7', 'B')">Submit Answer</button>
+        <div id="exp-q7" class="explanation" data-text="ENSO classification depends on sustained conditions, not a single day's temperature. Formal definitions also consider duration and atmospheric conditions.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q8. Which statement best distinguishes El Niño from La Niña?</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q8" value="A"> A. El Niño is the warm phase, while La Niña is the cool phase of ENSO.</label>
+            <label><input type="radio" name="q8" value="B"> B. El Niño occurs in the Atlantic Ocean, while La Niña occurs in the Pacific Ocean.</label>
+            <label><input type="radio" name="q8" value="C"> C. El Niño always causes drought throughout India, while La Niña always causes floods.</label>
+            <label><input type="radio" name="q8" value="D"> D. El Niño and La Niña are phases of the Indian Ocean Dipole.</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q8', 'A')">Submit Answer</button>
+        <div id="exp-q8" class="explanation" data-text="Both are phases of ENSO, centred on the tropical Pacific. Their effects on India are not perfectly uniform or inevitable.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q9. Consider the following statements regarding El Niño's possible impact on India:</strong><br>
+        1. El Niño can weaken the Indian summer monsoon.<br>
+        2. Every El Niño year necessarily records rainfall below 87% of LPA.<br>
+        3. El Niño may contribute to agricultural stress through rainfall deficits and heat.<br>
+        4. A warmer winter in India is conclusive proof of El Niño.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q9" value="A"> A. 1 and 3 only</label>
+            <label><input type="radio" name="q9" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q9" value="C"> C. 2 and 4 only</label>
+            <label><input type="radio" name="q9" value="D"> D. 1, 3 and 4 only</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q9', 'A')">Submit Answer</button>
+        <div id="exp-q9" class="explanation" data-text="El Niño's effects depend on several interacting climatic factors. Neither a particular rainfall percentage nor a warm winter alone proves El Niño.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q10. The Relative Oceanic Niño Index (RONI) is most closely associated with:</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q10" value="A"> A. Measuring India's annual groundwater depletion.</label>
+            <label><input type="radio" name="q10" value="B"> B. Comparing tropical Pacific sea-surface temperature anomalies with a relative tropical-ocean baseline.</label>
+            <label><input type="radio" name="q10" value="C"> C. Measuring the percentage of agricultural land affected by drought.</label>
+            <label><input type="radio" name="q10" value="D"> D. Calculating the Long Period Average of Indian monsoon rainfall.</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q10', 'B')">Submit Answer</button>
+        <div id="exp-q10" class="explanation" data-text="RONI is a relative measure used in ENSO monitoring. It should not be confused with India's LPA rainfall measure.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q11. Consider possible consequences of severe drought in South America and Africa:</strong><br>
+        1. Reduced agricultural output.<br>
+        2. Increased demand for fertilisers and fuel in affected agricultural systems.<br>
+        3. Potential increases in global food prices.<br>
+        4. Guaranteed decline in global inflation in every affected country.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q11" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q11" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q11" value="C"> C. 2 and 4 only</label>
+            <label><input type="radio" name="q11" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q11', 'B')">Submit Answer</button>
+        <div id="exp-q11" class="explanation" data-text="Drought can disrupt production and supply chains, putting upward pressure on prices. Inflation effects are not guaranteed or uniform.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q12. Consider the following statements about the Long Period Average (LPA):</strong><br>
+        1. It is a reference average used to assess monsoon rainfall.<br>
+        2. Actual rainfall can be expressed as a percentage of LPA.<br>
+        3. Rainfall at 87% of LPA is below the reference average.<br>
+        4. LPA measures the average temperature of the Niño 3.4 region.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q12" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q12" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q12" value="C"> C. 2, 3 and 4 only</label>
+            <label><input type="radio" name="q12" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q12', 'B')">Submit Answer</button>
+        <div id="exp-q12" class="explanation" data-text="LPA is a rainfall benchmark. Niño 3.4 is used to monitor Pacific sea-surface temperature anomalies.[cite: 1]"></div>
+    </div>
+
+    <!-- SECTION C -->
+    <h2>SECTION C — SNAKEBITE AND SYNTHETIC ANTIVENOM</h2>
+
+    <div class="question-box">
+        <p><strong>Q13. Consider the following statements regarding the antibody cocktail mentioned in the notes:</strong><br>
+        1. The research involves scientists from IISc Bengaluru and the Technical University of Denmark.<br>
+        2. The approach involves antibodies derived from alpacas and llamas.<br>
+        3. The notes report that the antibody approach was tested on mice and saved them in experimental work.<br>
+        4. The research automatically establishes that the treatment is approved for routine human use.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q13" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q13" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q13" value="C"> C. 2, 3 and 4 only</label>
+            <label><input type="radio" name="q13" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q13', 'B')">Submit Answer</button>
+        <div id="exp-q13" class="explanation" data-text="The notes report protection in mice. Animal-study results do not automatically establish safety or efficacy in humans; human clinical testing and regulatory approval are separate steps.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q14. Which snakes are included in the traditional “Big Four” grouping in India?</strong><br>
+        1. Indian spectacled cobra<br>
+        2. Common krait<br>
+        3. Russell's viper<br>
+        4. Saw-scaled viper</p>
+        <div class="options">
+            <label><input type="radio" name="q14" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q14" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q14" value="C"> C. 1, 2, 3 and 4</label>
+            <label><input type="radio" name="q14" value="D"> D. 2, 3 and 4 only</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q14', 'C')">Submit Answer</button>
+        <div id="exp-q14" class="explanation" data-text="All four are included in the traditional Indian Big Four grouping.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q15. Consider the following statements regarding snake venom:</strong><br>
+        1. Cobra venom can contain neurotoxins that interfere with nerve signalling.<br>
+        2. Neurotoxic envenoming can cause paralysis and potentially respiratory failure.<br>
+        3. All snake venoms act exclusively on the nervous system.<br>
+        4. Russell's viper and saw-scaled viper envenoming can involve effects on blood clotting.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q15" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q15" value="B"> B. 1, 2 and 4 only</label>
+            <label><input type="radio" name="q15" value="C"> C. 2 and 3 only</label>
+            <label><input type="radio" name="q15" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q15', 'B')">Submit Answer</button>
+        <div id="exp-q15" class="explanation" data-text="Snake venoms have different toxin profiles. Viper envenoming commonly causes haemotoxic effects, including coagulopathy, though clinical effects can vary.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q16. Why might antibodies from alpacas and llamas be useful in developing antivenom treatments?</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q16" value="A"> A. They eliminate the need to identify and neutralise venom toxins.</label>
+            <label><input type="radio" name="q16" value="B"> B. They can provide antibody-derived molecules that researchers investigate for binding to and neutralising toxins.</label>
+            <label><input type="radio" name="q16" value="C"> C. They make every snakebite harmless without medical intervention.</label>
+            <label><input type="radio" name="q16" value="D"> D. They guarantee immediate protection after a bite in humans.</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q16', 'B')">Submit Answer</button>
+        <div id="exp-q16" class="explanation" data-text="Antibody-based approaches can help researchers develop toxin-neutralising treatments, but they do not guarantee protection or replace urgent medical care.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q17. A person is bitten by a snake, but the species cannot be identified confidently. What is the most appropriate action?</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q17" value="A"> A. Delay treatment until the snake is identified.</label>
+            <label><input type="radio" name="q17" value="B"> B. Attempt to catch the snake for confirmation.</label>
+            <label><input type="radio" name="q17" value="C"> C. Seek emergency medical care immediately and avoid risky attempts to capture the snake.</label>
+            <label><input type="radio" name="q17" value="D"> D. Assume the bite is harmless if no symptoms appear immediately.</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q17', 'C')">Submit Answer</button>
+        <div id="exp-q17" class="explanation" data-text="Snakebite is a medical emergency. Do not delay transport or treatment while trying to identify the snake.[cite: 1]"></div>
+    </div>
+
+    <!-- SECTION D -->
+    <h2>SECTION D — CENSUS RULES AND ARTICLE 23</h2>
+
+    <div class="question-box">
+        <p><strong>Q18. Consider the following statements regarding Article 23 of the Indian Constitution:</strong><br>
+        1. Article 23 prohibits trafficking in human beings, begar and other similar forms of forced labour.<br>
+        2. Article 23 applies against private individuals as well as the State.<br>
+        3. Article 23(2) permits compulsory service for public purposes, subject to the prohibition on discrimination solely on specified grounds.<br>
+        4. Article 23(2) prohibits every form of compulsory public service without exception.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q18" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q18" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q18" value="C"> C. 2, 3 and 4 only</label>
+            <label><input type="radio" name="q18" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q18', 'B')">Submit Answer</button>
+        <div id="exp-q18" class="explanation" data-text="Article 23(2) permits compulsory service for public purposes. The State cannot discriminate solely on grounds of religion, race, caste or class, or any of them.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q19. With reference to Article 23(2):</strong><br>
+        1. It permits compulsory service for public purposes.<br>
+        2. The State may not discriminate solely on the constitutionally specified grounds when imposing such service.<br>
+        3. It creates an unrestricted power to compel any person to work for a private commercial employer.<br>
+        4. Article 23(1) and Article 23(2) should be read together to understand the constitutional treatment of forced labour and compulsory service.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q19" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q19" value="B"> B. 1, 2 and 4 only</label>
+            <label><input type="radio" name="q19" value="C"> C. 2 and 3 only</label>
+            <label><input type="radio" name="q19" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q19', 'B')">Submit Answer</button>
+        <div id="exp-q19" class="explanation" data-text="Article 23(2) is a limited provision concerning compulsory service for public purposes. It is not blanket authorisation for forced private labour.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q20. Consider the following statements about compulsory participation in census-related work:</strong><br>
+        1. The notes refer to an amendment to the Census Rules, 1990.<br>
+        2. The notes mention private-school teachers and private-sector employees in relation to census work.<br>
+        3. Article 23 is relevant to discussions about forced labour and compulsory service.<br>
+        4. A High Court stay automatically establishes that the amendment has been permanently struck down nationwide.<br>
+        Which statements are correct?</p>
+        <div class="options">
+            <label><input type="radio" name="q20" value="A"> A. 1 and 2 only</label>
+            <label><input type="radio" name="q20" value="B"> B. 1, 2 and 3 only</label>
+            <label><input type="radio" name="q20" value="C"> C. 2, 3 and 4 only</label>
+            <label><input type="radio" name="q20" value="D"> D. 1, 2, 3 and 4</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q20', 'B')">Submit Answer</button>
+        <div id="exp-q20" class="explanation" data-text="A stay order is not the same as a final judgment striking down a provision. The precise scope and current status of the reported Punjab and Haryana High Court order would need separate verification.[cite: 1]"></div>
+    </div>
+
+    <!-- SECTION E -->
+    <h2>SECTION E — MAP-BASED FACTUAL QUESTIONS</h2>
+
+    <div class="question-box">
+        <p><strong>Q21. Which South American country has the greatest number of international land-bordering countries?</strong></p>
+        <div class="options">
+            <label><input type="radio" name="q21" value="A"> A. Brazil</label>
+            <label><input type="radio" name="q21" value="B"> B. Argentina</label>
+            <label><input type="radio" name="q21" value="C"> C. Chile</label>
+            <label><input type="radio" name="q21" value="D"> D. Peru</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q21', 'A')">Submit Answer</button>
+        <div id="exp-q21" class="explanation" data-text="Brazil shares land borders with 10 South American countries. Ecuador and Chile are the two South American countries that do not share a land border with Brazil.[cite: 1]"></div>
+    </div>
+
+    <div class="question-box">
+        <p><strong>Q22. Which of the following South American countries are landlocked?</strong><br>
+        1. Bolivia<br>
+        2. Paraguay<br>
+        3. Ecuador<br>
+        4. Uruguay</p>
+        <div class="options">
+            <label><input type="radio" name="q22" value="A"> A. 1 only</label>
+            <label><input type="radio" name="q22" value="B"> B. 1 and 2 only</label>
+            <label><input type="radio" name="q22" value="C"> C. 2 and 3 only</label>
+            <label><input type="radio" name="q22" value="D"> D. 1, 2 and 4 only</label>
+        </div>
+        <button class="submit-btn" onclick="checkAnswer('q22', 'B')">Submit Answer</button>
+        <div id="exp-q22" class="explanation" data-text="Bolivia and Paraguay are landlocked. Ecuador and Uruguay have coastlines.[cite: 1]"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
+```[cite: 1]
